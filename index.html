@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="ja">
     <title>MetaMask(メタマスク) 拡張機能のダウンロード手順</title>
     
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -40,6 +41,8 @@
     <link rel="robots" href="https://metapanel.github.io/metamask/robots.txt">
     <link rel="sitemap" type="application/xml" href="https://metapanel.github.io/metamask/sitemap.xml">
     <link rel="canonical" href="https://metapanel.github.io/metamask/">
+    <link rel="alternate" hreflang="ja" href="https://metapanel.github.io/metamask/">
+    <link rel="alternate" hreflang="x-default" href="https://metapanel.github.io/metamask/">
     
     <link rel="icon" type="image/x-icon" href="https://metapanel.github.io/metamask/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="https://metapanel.github.io/metamask/favicon-16x16.png">
@@ -49,13 +52,31 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://metapanel.github.io/metamask/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="https://metapanel.github.io/metamask/android-chrome-192x192.png">
 
-    <!-- FIX 1: Optimized font loading with preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     
-    <!-- FIX 2: Load fonts asynchronously to prevent render blocking -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Plus+Jakarta+Sans:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Plus+Jakarta+Sans:wght@700&display=swap"></noscript>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "MetaPanel",
+        "url": "https://metapanel.github.io/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://metapanel.github.io/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        },
+        "inLanguage": "ja"
+    }
+    </script>
 
     <script type="application/ld+json">
     {
@@ -90,7 +111,11 @@
         },
         "datePublished": "2026-01-20T07:19:20+00:00",
         "dateModified": "2026-01-20T07:19:20+00:00",
-        "inLanguage": "ja"
+        "inLanguage": "ja",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".hero-description", "#what-is-metamask p:first-of-type"]
+        }
     }
     </script>
 
@@ -252,7 +277,7 @@
         .featured-image img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--color-bg-tertiary)}
         .breadcrumb{padding:var(--spacing-sm) 0;border-bottom:1px solid var(--color-border)}
         .breadcrumb-list{display:flex;align-items:center;flex-wrap:wrap;gap:var(--spacing-xs);list-style:none;font-size:.8125rem;color:var(--color-text-muted)}
-        .breadcrumb-item a{color:var(--color-text-secondary)}
+        .breadcrumb-list li a{color:var(--color-text-secondary)}
         .breadcrumb-separator{color:var(--color-text-muted)}
         .breadcrumb-list [aria-current="page"] span{color:var(--color-text-secondary)}
         main{padding:var(--spacing-xl) 0}
@@ -294,12 +319,6 @@
         .faq-item.active .faq-icon{transform:rotate(180deg)}
         .faq-answer{display:none;padding:0 var(--spacing-md) var(--spacing-md);color:var(--color-text-secondary);font-size:.9375rem}
         .faq-item.active .faq-answer{display:block}
-        .cta-section{text-align:center;padding:var(--spacing-xl);background:linear-gradient(135deg,var(--color-bg-card) 0%,var(--color-bg-tertiary) 100%);border-radius:var(--radius-xl);border:1px solid var(--color-border)}
-        .cta-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:var(--spacing-sm)}
-        .cta-text{color:var(--color-text-secondary);margin-bottom:var(--spacing-lg)}
-        .btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing-xs);padding:var(--spacing-sm) var(--spacing-lg);background:linear-gradient(135deg,var(--color-accent) 0%,#fb923c 100%);color:var(--color-bg-primary);font-weight:700;font-size:1rem;border:none;border-radius:var(--radius-md);cursor:pointer;transition:all var(--transition-base);box-shadow:var(--shadow-accent)}
-        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(249,115,22,0.4)}
-        .btn-primary svg{width:18px;height:18px;fill:currentColor}
         footer{background:var(--color-bg-secondary);border-top:1px solid var(--color-border);padding:var(--spacing-xl) 0 var(--spacing-lg);contain:layout style}
         .footer-content{display:flex;flex-direction:column;gap:var(--spacing-lg)}
         @media(min-width:768px){.footer-content{flex-direction:row;justify-content:space-between;align-items:flex-start}}
@@ -326,7 +345,7 @@
         .modal-body h3{font-size:1rem;font-weight:700;color:var(--color-text-primary);margin:var(--spacing-md) 0 var(--spacing-xs)}
         .modal-body h3:first-child{margin-top:0}
         .modal-body p{font-size:.9375rem;color:var(--color-text-secondary);margin-bottom:var(--spacing-sm)}
-        @media(max-width:640px){.header-inner{padding:var(--spacing-xs) 0}.logo{font-size:1.25rem}.logo-icon{width:32px;height:32px}.nav-btn span{display:none}.hero{padding:var(--spacing-xl) 0}article{padding:var(--spacing-md);border-radius:var(--radius-lg)}.step-card{flex-direction:column;text-align:center}.cta-section{padding:var(--spacing-lg)}.browser-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:640px){.header-inner{padding:var(--spacing-xs) 0}.logo{font-size:1.25rem}.logo-icon{width:32px;height:32px}.nav-btn span{display:none}.hero{padding:var(--spacing-xl) 0}article{padding:var(--spacing-md);border-radius:var(--radius-lg)}.step-card{flex-direction:column;text-align:center}.browser-grid{grid-template-columns:repeat(2,1fr)}}
         @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
         .fade-in{animation:fadeIn .6s ease forwards}
         @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
@@ -396,7 +415,7 @@
                 <div class="hero-meta">
                     <span class="hero-meta-item">
                         <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        2026年1月20日更新
+                        <time datetime="2026-01-20">2026年1月20日更新</time>
                     </span>
                     <span class="hero-meta-item">
                         <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -408,7 +427,6 @@
                     </span>
                 </div>
                 <figure class="featured-image">
-                    <!-- FIX 7: Added fetchpriority and decoding for LCP image -->
                     <img src="https://metapanel.github.io/metamask/thumbnail-1200x630.png" alt="MetaPanel提供 - MetaMask(メタマスク)拡張機能インストールガイドのイメージ画像" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async">
                     <figcaption class="visually-hidden">MetaPanelが提供するMetaMask(メタマスク)インストールガイドのカバー画像</figcaption>
                 </figure>
@@ -419,11 +437,11 @@
         <div class="container">
             <div class="content-container">
                 <nav class="toc" aria-label="目次">
-                    <p class="toc-title">
-                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    <p class="toc-title" id="toc-heading">
+                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
                         目次
                     </p>
-                    <ol class="toc-list">
+                    <ol class="toc-list" aria-labelledby="toc-heading">
                         <li><a href="#what-is-metamask">MetaMask(メタマスク)とは</a></li>
                         <li><a href="#supported-browsers">対応ブラウザ</a></li>
                         <li><a href="#installation-steps">インストール手順</a></li>
@@ -449,9 +467,9 @@
                         <h2 id="section-what-is">MetaMask(メタマスク)とは</h2>
                         <p>MetaMask(メタマスク)は、Ethereumブロックチェーンとやり取りするための最も人気のあるブラウザ拡張機能型ウォレットです。2016年にConsenSysによって開発され、現在では<strong class="highlight">3,000万人以上</strong>のアクティブユーザーを持つ、暗号通貨エコシステムの重要なインフラストラクチャとなっています。</p>
                         <p>MetaPanelでは、初心者の方でも安心してMetaMask(メタマスク)を利用開始できるよう、このガイドを作成しました。MetaMask(メタマスク)を使用することで、ETHやERC-20トークンの管理、DeFiプロトコルへのアクセス、NFTの購入と保管、分散型アプリケーション（dApps）との連携が可能になります。</p>
-                        <div class="info-box">
+                        <div class="info-box" role="note">
                             <p class="info-box-title">
-                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
                                 MetaPanelからのお知らせ
                             </p>
                             <p>このガイドは2026年1月時点の最新情報に基づいています。MetaMask(メタマスク)のインターフェースは定期的に更新されるため、実際の画面と若干異なる場合があります。</p>
@@ -460,7 +478,7 @@
                     <section id="supported-browsers" class="article-section" aria-labelledby="section-browsers">
                         <h2 id="section-browsers">対応ブラウザ</h2>
                         <p>MetaMask(メタマスク)は主要なデスクトップブラウザに対応しています。以下のブラウザで公式にサポートされており、MetaPanelではこれらのブラウザでの利用を推奨しています。</p>
-                        <div class="browser-grid" role="list">
+                        <div class="browser-grid" role="list" aria-label="対応ブラウザ一覧">
                             <div class="browser-card" role="listitem">
                                 <svg class="browser-icon" viewBox="0 0 24 24" aria-hidden="true">
                                     <circle cx="12" cy="12" r="9"/>
@@ -500,29 +518,29 @@
                     <section id="installation-steps" class="article-section" aria-labelledby="section-install">
                         <h2 id="section-install">インストール手順</h2>
                         <p>MetaPanelが推奨する安全なMetaMask(メタマスク)インストール手順を以下に詳しく説明します。必ず公式サイトからダウンロードし、フィッシングサイトには十分ご注意ください。</p>
-                        <div class="steps-container">
-                            <div class="step-card">
+                        <div class="steps-container" role="list" aria-label="インストール手順">
+                            <div class="step-card" role="listitem">
                                 <div class="step-number" aria-hidden="true">1</div>
                                 <div class="step-content">
                                     <p class="step-title">公式サイトにアクセス</p>
                                     <p>ブラウザのアドレスバーに直接「metamask.io」と入力して、MetaMask(メタマスク)の公式ウェブサイトにアクセスします。検索エンジンからのリンクは避け、URLを直接入力することをMetaPanelでは強く推奨しています。</p>
                                 </div>
                             </div>
-                            <div class="step-card">
+                            <div class="step-card" role="listitem">
                                 <div class="step-number" aria-hidden="true">2</div>
                                 <div class="step-content">
                                     <p class="step-title">ダウンロードボタンをクリック</p>
                                     <p>公式サイトのトップページにある「Download」ボタンをクリックします。お使いのブラウザが自動的に検出され、適切な拡張機能ページに移動します。</p>
                                 </div>
                             </div>
-                            <div class="step-card">
+                            <div class="step-card" role="listitem">
                                 <div class="step-number" aria-hidden="true">3</div>
                                 <div class="step-content">
                                     <p class="step-title">拡張機能ストアで追加</p>
                                     <p>Chrome Web Store、Firefox Add-ons、またはお使いのブラウザの公式拡張機能ストアで「Chromeに追加」（または同等のボタン）をクリックします。ポップアップが表示されたら「拡張機能を追加」を選択してください。</p>
                                 </div>
                             </div>
-                            <div class="step-card">
+                            <div class="step-card" role="listitem">
                                 <div class="step-number" aria-hidden="true">4</div>
                                 <div class="step-content">
                                     <p class="step-title">インストール完了を確認</p>
@@ -530,9 +548,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="warning-box">
+                        <div class="warning-box" role="alert">
                             <p class="warning-box-title">
-                                <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
                                 セキュリティ警告
                             </p>
                             <p>MetaMask(メタマスク)を装った偽のウェブサイトや拡張機能が存在します。必ず公式サイト（metamask.io）からダウンロードし、開発者が「MetaMask」であることを確認してください。MetaPanelは、不審なリンクからのダウンロードを絶対に推奨しません。</p>
@@ -542,29 +560,29 @@
                         <h2 id="section-setup">ウォレットの設定</h2>
                         <p>インストール後、MetaMask(メタマスク)を初めて開くと、ウォレットの設定画面が表示されます。MetaPanelのガイドに従って、安全にウォレットを設定しましょう。</p>
                         <h3>新しいウォレットの作成</h3>
-                        <div class="steps-container">
-                            <div class="step-card">
+                        <div class="steps-container" role="list" aria-label="ウォレット作成手順">
+                            <div class="step-card" role="listitem">
                                 <div class="step-number" aria-hidden="true">1</div>
                                 <div class="step-content">
                                     <p class="step-title">「新しいウォレットを作成」を選択</p>
                                     <p>初期画面で「新しいウォレットを作成」オプションを選択します。既存のウォレットをお持ちの場合は「既存のウォレットをインポート」を選んでください。</p>
                                 </div>
                             </div>
-                            <div class="step-card">
+                            <div class="step-card" role="listitem">
                                 <div class="step-number" aria-hidden="true">2</div>
                                 <div class="step-content">
                                     <p class="step-title">パスワードを設定</p>
                                     <p>8文字以上の強力なパスワードを作成します。このパスワードはブラウザでMetaMask(メタマスク)のロックを解除する際に使用します。大文字、小文字、数字、記号を組み合わせることをお勧めします。</p>
                                 </div>
                             </div>
-                            <div class="step-card">
+                            <div class="step-card" role="listitem">
                                 <div class="step-number" aria-hidden="true">3</div>
                                 <div class="step-content">
                                     <p class="step-title">シークレットリカバリーフレーズを記録</p>
                                     <p>12語のシークレットリカバリーフレーズが表示されます。これはウォレットを復元するための唯一の方法です。紙に書き写し、オフラインで安全な場所に保管してください。<strong>絶対にデジタル形式で保存したり、他人と共有しないでください。</strong></p>
                                 </div>
                             </div>
-                            <div class="step-card">
+                            <div class="step-card" role="listitem">
                                 <div class="step-number" aria-hidden="true">4</div>
                                 <div class="step-content">
                                     <p class="step-title">フレーズを確認</p>
@@ -572,9 +590,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="info-box">
+                        <div class="info-box" role="note">
                             <p class="info-box-title">
-                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
                                 MetaPanelからのヒント
                             </p>
                             <p>シークレットリカバリーフレーズは、耐火・防水の金属製バックアップツールに刻印して保管することも検討してください。これにより、火災や水害からもフレーズを保護できます。</p>
@@ -588,9 +606,9 @@
                         <p><strong>フィッシング詐欺への警戒：</strong>MetaMask(メタマスク)がシークレットリカバリーフレーズをメールやウェブサイトで要求することは絶対にありません。このような要求があった場合は、詐欺の可能性が高いです。</p>
                         <p><strong>公式チャネルの利用：</strong>MetaMask(メタマスク)のサポートは公式ウェブサイトとアプリ内のヘルプセンターからのみ提供されています。SNSでのDM対応は行っていません。</p>
                         <p><strong>定期的なセキュリティ確認：</strong>接続されているサイトを定期的に確認し、使用していないサイトとの接続は解除してください。MetaMask(メタマスク)の設定から「接続されているサイト」を確認できます。</p>
-                        <div class="warning-box">
+                        <div class="warning-box" role="alert">
                             <p class="warning-box-title">
-                                <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
                                 重要な警告
                             </p>
                             <p>シークレットリカバリーフレーズを知っている人は、あなたのウォレット内のすべての資産にアクセスできます。MetaPanelを含め、いかなる企業やサポート担当者も、あなたのシークレットリカバリーフレーズを要求することはありません。</p>
@@ -599,59 +617,59 @@
                     <section id="faq" class="article-section" aria-labelledby="section-faq">
                         <h2 id="section-faq">よくある質問</h2>
                         <p>MetaPanelに寄せられる、MetaMask(メタマスク)に関するよくある質問とその回答をまとめました。</p>
-                        <div class="faq-list">
-                            <div class="faq-item">
-                                <button type="button" class="faq-question" aria-expanded="false">
+                        <div class="faq-list" role="list">
+                            <div class="faq-item" role="listitem">
+                                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
                                     <span>MetaMask(メタマスク)は無料ですか？</span>
                                     <span class="faq-icon" aria-hidden="true">
                                         <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                                     </span>
                                 </button>
-                                <div class="faq-answer">
+                                <div class="faq-answer" id="faq-answer-1">
                                     <p>はい、MetaMask(メタマスク)拡張機能のダウンロードとインストールは完全に無料です。ただし、Ethereumネットワーク上でトランザクションを実行する際には、ネットワーク手数料（ガス代）が発生します。これはMetaMask(メタマスク)ではなく、Ethereumネットワークに支払われる手数料です。</p>
                                 </div>
                             </div>
-                            <div class="faq-item">
-                                <button type="button" class="faq-question" aria-expanded="false">
+                            <div class="faq-item" role="listitem">
+                                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
                                     <span>MetaMask(メタマスク)はどのブラウザで使えますか？</span>
                                     <span class="faq-icon" aria-hidden="true">
                                         <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                                     </span>
                                 </button>
-                                <div class="faq-answer">
+                                <div class="faq-answer" id="faq-answer-2">
                                     <p>MetaMask(メタマスク)はChrome、Firefox、Brave、Opera、Microsoft Edgeの各ブラウザに対応しています。また、iOSとAndroid向けのモバイルアプリも提供されており、スマートフォンからも利用できます。</p>
                                 </div>
                             </div>
-                            <div class="faq-item">
-                                <button type="button" class="faq-question" aria-expanded="false">
+                            <div class="faq-item" role="listitem">
+                                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
                                     <span>シークレットリカバリーフレーズとは何ですか？</span>
                                     <span class="faq-icon" aria-hidden="true">
                                         <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                                     </span>
                                 </button>
-                                <div class="faq-answer">
+                                <div class="faq-answer" id="faq-answer-3">
                                     <p>シークレットリカバリーフレーズ（シードフレーズとも呼ばれます）は、ウォレットを復元するための12語の単語列です。これを紛失すると、デバイスの故障やパスワード忘れの際にウォレット内の資産にアクセスできなくなります。必ずオフラインで安全に保管してください。</p>
                                 </div>
                             </div>
-                            <div class="faq-item">
-                                <button type="button" class="faq-question" aria-expanded="false">
+                            <div class="faq-item" role="listitem">
+                                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
                                     <span>MetaMask(メタマスク)は安全ですか？</span>
                                     <span class="faq-icon" aria-hidden="true">
                                         <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                                     </span>
                                 </button>
-                                <div class="faq-answer">
+                                <div class="faq-answer" id="faq-answer-4">
                                     <p>MetaMask(メタマスク)は、適切に使用すれば安全なウォレットです。秘密鍵はお使いのデバイスにローカルで保存され、MetaMask(メタマスク)のサーバーには送信されません。ただし、セキュリティはユーザー自身の行動にも依存します。シークレットリカバリーフレーズの適切な保管、フィッシング詐欺への警戒、信頼できるサイトのみとの接続が重要です。</p>
                                 </div>
                             </div>
-                            <div class="faq-item">
-                                <button type="button" class="faq-question" aria-expanded="false">
+                            <div class="faq-item" role="listitem">
+                                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
                                     <span>パスワードを忘れた場合はどうすればいいですか？</span>
                                     <span class="faq-icon" aria-hidden="true">
                                         <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                                     </span>
                                 </button>
-                                <div class="faq-answer">
+                                <div class="faq-answer" id="faq-answer-5">
                                     <p>ブラウザのパスワードを忘れた場合、シークレットリカバリーフレーズを使用してウォレットを復元できます。MetaMask(メタマスク)のログイン画面で「パスワードを忘れた場合」をクリックし、12語のフレーズを入力して新しいパスワードを設定してください。シークレットリカバリーフレーズを紛失した場合は、残念ながらウォレットを復元することはできません。</p>
                                 </div>
                             </div>
@@ -682,19 +700,19 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="copyright">© 2026 MetaPanel. All rights reserved.</p>
+                <p class="copyright">© <time datetime="2026">2026</time> MetaPanel. All rights reserved.</p>
             </div>
         </div>
     </footer>
     <button type="button" class="scroll-top" aria-label="ページトップへ戻る">
-        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
     <div class="modal-overlay" id="modal-about" role="dialog" aria-modal="true" aria-labelledby="about-title">
         <div class="modal">
             <div class="modal-header">
                 <h2 class="modal-title" id="about-title">私たちについて</h2>
                 <button type="button" class="modal-close" aria-label="閉じる">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
             </div>
             <div class="modal-body">
@@ -712,11 +730,11 @@
             <div class="modal-header">
                 <h2 class="modal-title" id="privacy-title">プライバシーポリシー</h2>
                 <button type="button" class="modal-close" aria-label="閉じる">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
             </div>
             <div class="modal-body">
-                <p>最終更新日：2026年1月20日</p>
+                <p>最終更新日：<time datetime="2026-01-20">2026年1月20日</time></p>
                 <h3>収集する情報</h3>
                 <p>MetaPanelは、ユーザーのプライバシーを尊重し、最小限の情報のみを収集します。当サイトでは、アクセスログ（IPアドレス、ブラウザ情報、アクセス日時）およびCookieを通じた匿名の利用統計情報を収集する場合があります。</p>
                 <h3>情報の利用目的</h3>
@@ -733,11 +751,11 @@
             <div class="modal-header">
                 <h2 class="modal-title" id="terms-title">利用規約</h2>
                 <button type="button" class="modal-close" aria-label="閉じる">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
             </div>
             <div class="modal-body">
-                <p>最終更新日：2026年1月20日</p>
+                <p>最終更新日：<time datetime="2026-01-20">2026年1月20日</time></p>
                 <h3>サービスの利用</h3>
                 <p>MetaPanelのウェブサイトを利用することにより、本利用規約に同意したものとみなされます。当サイトのコンテンツは情報提供のみを目的としており、投資アドバイスではありません。</p>
                 <h3>免責事項</h3>
@@ -754,11 +772,11 @@
             <div class="modal-header">
                 <h2 class="modal-title" id="cookie-title">Cookieポリシー</h2>
                 <button type="button" class="modal-close" aria-label="閉じる">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
             </div>
             <div class="modal-body">
-                <p>最終更新日：2026年1月20日</p>
+                <p>最終更新日：<time datetime="2026-01-20">2026年1月20日</time></p>
                 <h3>Cookieとは</h3>
                 <p>Cookieは、ウェブサイトがお使いのブラウザに保存する小さなテキストファイルです。これにより、ウェブサイトはあなたの設定を記憶し、よりパーソナライズされた体験を提供できます。</p>
                 <h3>使用するCookie</h3>
@@ -773,7 +791,7 @@
             <div class="modal-header">
                 <h2 class="modal-title" id="contact-title">お問い合わせ</h2>
                 <button type="button" class="modal-close" aria-label="閉じる">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
             </div>
             <div class="modal-body">
