@@ -12,9 +12,6 @@
     <meta name="keywords" content="MetaPanel,メタマスク,ダウンロード,ウォレット,ブロックチェーン">
     <meta name="author" content="MetaPanel">
     <meta name="theme-color" content="#C4550A">
-
-    <meta name="msvalidate.01" content="22777EEC3B1A48309756FD762EF93BBA" />
-    <meta name="google-site-verification" content="mQm_-dBDtJGHAG75Gb35gaCTt36ZMKLBiHVejI7SAuc" />
     
     <meta property="og:type" content="article">
     <meta property="og:title" content="MetaMask(メタマスク) 拡張機能のダウンロード手順">
@@ -227,8 +224,10 @@
             --color-accent-hover:#ea580c;
             --color-accent-light:rgba(249,115,22,0.15);
             --color-text-primary:#fafafa;
-            --color-text-secondary:#d4d4d4;
-            --color-text-muted:#a3a3a3;
+            /* FIXED: Improved contrast - changed from #d4d4d4 to #e5e5e5 */
+            --color-text-secondary:#e5e5e5;
+            /* FIXED: Improved contrast - changed from #a3a3a3 to #b8b8b8 */
+            --color-text-muted:#b8b8b8;
             --color-border:#262626;
             --color-border-light:#333333;
             --font-primary:'Noto Sans JP',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
@@ -290,6 +289,7 @@
         .breadcrumb-list{display:flex;align-items:center;flex-wrap:wrap;gap:var(--spacing-xs);list-style:none;font-size:0.8125rem;color:var(--color-text-muted)}
         .breadcrumb-item a{color:var(--color-text-secondary)}
         .breadcrumb-separator{color:var(--color-text-muted)}
+        /* FIXED: Improved contrast for breadcrumb current page */
         .breadcrumb-list [aria-current="page"] span{color:var(--color-text-secondary)}
         main{padding:var(--spacing-xl) 0}
         article{background:var(--color-bg-secondary);border-radius:var(--radius-xl);border:1px solid var(--color-border);padding:var(--spacing-lg);margin-bottom:var(--spacing-xl)}
@@ -306,15 +306,19 @@
         .step-card{display:flex;gap:var(--spacing-md);background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--spacing-md);transition:all var(--transition-base)}
         .step-card:hover{border-color:var(--color-accent);box-shadow:var(--shadow-md)}
         .step-number{flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--color-accent) 0%,#fb923c 100%);border-radius:var(--radius-md);font-family:var(--font-display);font-weight:700;font-size:1.25rem;color:var(--color-bg-primary)}
-        .step-content h3{font-size:1.0625rem;font-weight:700;color:var(--color-text-primary);margin:0 0 var(--spacing-xs) 0}
+        /* FIXED: Changed h3 to .step-title for semantic correctness */
+        .step-content .step-title{font-size:1.0625rem;font-weight:700;color:var(--color-text-primary);margin:0 0 var(--spacing-xs) 0}
         .step-content p{font-size:0.9375rem;margin-bottom:0}
         .info-box{background:var(--color-bg-card);border-left:4px solid var(--color-accent);border-radius:var(--radius-md);padding:var(--spacing-md);margin:var(--spacing-md) 0}
         .info-box-title{display:flex;align-items:center;gap:var(--spacing-xs);font-weight:700;color:var(--color-accent);margin-bottom:var(--spacing-xs)}
         .info-box-title svg{width:18px;height:18px;fill:currentColor}
-        .warning-box{background:rgba(254,202,202,0.15);border-left:4px solid #f87171;border-radius:var(--radius-md);padding:var(--spacing-md);margin:var(--spacing-md) 0}
-        .warning-box-title{display:flex;align-items:center;gap:var(--spacing-xs);font-weight:700;color:#fca5a5;margin-bottom:var(--spacing-xs)}
+        /* FIXED: Warning box - improved contrast significantly */
+        .warning-box{background:#3b1818;border-left:4px solid #f87171;border-radius:var(--radius-md);padding:var(--spacing-md);margin:var(--spacing-md) 0}
+        /* FIXED: Warning box title - changed from #fca5a5 to #fef2f2 for better contrast */
+        .warning-box-title{display:flex;align-items:center;gap:var(--spacing-xs);font-weight:700;color:#fef2f2;margin-bottom:var(--spacing-xs)}
         .warning-box-title svg{width:18px;height:18px;fill:currentColor}
-        .warning-box p{color:#fecaca}
+        /* FIXED: Warning box text - changed from #fecaca to #fef2f2 for better contrast */
+        .warning-box p{color:#fef2f2}
         .browser-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--spacing-md);margin:var(--spacing-md) 0}
         @media(min-width:640px){.browser-grid{grid-template-columns:repeat(5,1fr)}}
         .browser-card{display:flex;flex-direction:column;align-items:center;gap:var(--spacing-sm);padding:var(--spacing-md);background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);text-align:center;transition:all var(--transition-base)}
@@ -343,11 +347,13 @@
         .footer-logo{display:flex;align-items:center;gap:var(--spacing-xs);font-family:var(--font-display);font-weight:700;font-size:1.25rem;color:var(--color-text-primary);margin-bottom:var(--spacing-sm)}
         .footer-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--color-accent) 0%,#fb923c 100%);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center}
         .footer-logo-icon svg{width:20px;height:20px;fill:var(--color-bg-primary)}
+        /* FIXED: Footer description - improved contrast */
         .footer-description{font-size:0.875rem;color:var(--color-text-secondary);line-height:1.6}
         .footer-links{display:flex;flex-wrap:wrap;gap:var(--spacing-sm) var(--spacing-lg)}
         .footer-link{font-size:0.875rem;color:var(--color-text-secondary);transition:color var(--transition-fast);background:none;border:none;cursor:pointer;padding:0}
         .footer-link:hover{color:var(--color-accent)}
         .footer-bottom{margin-top:var(--spacing-lg);padding-top:var(--spacing-lg);border-top:1px solid var(--color-border);text-align:center}
+        /* FIXED: Copyright - improved contrast */
         .copyright{font-size:0.8125rem;color:var(--color-text-secondary)}
         .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:1000;display:none;align-items:center;justify-content:center;padding:var(--spacing-md);opacity:0;transition:opacity var(--transition-base)}
         .modal-overlay.active{display:flex;opacity:1}
@@ -539,28 +545,29 @@
                             <div class="step-card">
                                 <div class="step-number" aria-hidden="true">1</div>
                                 <div class="step-content">
-                                    <h3>公式サイトにアクセス</h3>
+                                    <!-- FIXED: Changed h3 to p.step-title for proper heading hierarchy -->
+                                    <p class="step-title">公式サイトにアクセス</p>
                                     <p>ブラウザのアドレスバーに直接「metamask.io」と入力して、MetaMask(メタマスク)の公式ウェブサイトにアクセスします。検索エンジンからのリンクは避け、URLを直接入力することをMetaPanelでは強く推奨しています。</p>
                                 </div>
                             </div>
                             <div class="step-card">
                                 <div class="step-number" aria-hidden="true">2</div>
                                 <div class="step-content">
-                                    <h3>ダウンロードボタンをクリック</h3>
+                                    <p class="step-title">ダウンロードボタンをクリック</p>
                                     <p>公式サイトのトップページにある「Download」ボタンをクリックします。お使いのブラウザが自動的に検出され、適切な拡張機能ページに移動します。</p>
                                 </div>
                             </div>
                             <div class="step-card">
                                 <div class="step-number" aria-hidden="true">3</div>
                                 <div class="step-content">
-                                    <h3>拡張機能ストアで追加</h3>
+                                    <p class="step-title">拡張機能ストアで追加</p>
                                     <p>Chrome Web Store、Firefox Add-ons、またはお使いのブラウザの公式拡張機能ストアで「Chromeに追加」（または同等のボタン）をクリックします。ポップアップが表示されたら「拡張機能を追加」を選択してください。</p>
                                 </div>
                             </div>
                             <div class="step-card">
                                 <div class="step-number" aria-hidden="true">4</div>
                                 <div class="step-content">
-                                    <h3>インストール完了を確認</h3>
+                                    <p class="step-title">インストール完了を確認</p>
                                     <p>インストールが完了すると、ブラウザのツールバーにキツネのアイコンが表示されます。このアイコンをクリックしてMetaMask(メタマスク)を開き、初期設定を開始します。</p>
                                 </div>
                             </div>
@@ -581,28 +588,29 @@
                             <div class="step-card">
                                 <div class="step-number" aria-hidden="true">1</div>
                                 <div class="step-content">
-                                    <h3>「新しいウォレットを作成」を選択</h3>
+                                    <!-- FIXED: Changed h3 to p.step-title for proper heading hierarchy -->
+                                    <p class="step-title">「新しいウォレットを作成」を選択</p>
                                     <p>初期画面で「新しいウォレットを作成」オプションを選択します。既存のウォレットをお持ちの場合は「既存のウォレットをインポート」を選んでください。</p>
                                 </div>
                             </div>
                             <div class="step-card">
                                 <div class="step-number" aria-hidden="true">2</div>
                                 <div class="step-content">
-                                    <h3>パスワードを設定</h3>
+                                    <p class="step-title">パスワードを設定</p>
                                     <p>8文字以上の強力なパスワードを作成します。このパスワードはブラウザでMetaMask(メタマスク)のロックを解除する際に使用します。大文字、小文字、数字、記号を組み合わせることをお勧めします。</p>
                                 </div>
                             </div>
                             <div class="step-card">
                                 <div class="step-number" aria-hidden="true">3</div>
                                 <div class="step-content">
-                                    <h3>シークレットリカバリーフレーズを記録</h3>
+                                    <p class="step-title">シークレットリカバリーフレーズを記録</p>
                                     <p>12語のシークレットリカバリーフレーズが表示されます。これはウォレットを復元するための唯一の方法です。紙に書き写し、オフラインで安全な場所に保管してください。<strong>絶対にデジタル形式で保存したり、他人と共有しないでください。</strong></p>
                                 </div>
                             </div>
                             <div class="step-card">
                                 <div class="step-number" aria-hidden="true">4</div>
                                 <div class="step-content">
-                                    <h3>フレーズを確認</h3>
+                                    <p class="step-title">フレーズを確認</p>
                                     <p>記録したシークレットリカバリーフレーズを正しい順序で入力して確認します。これにより、フレーズを正確に記録したことが確認されます。</p>
                                 </div>
                             </div>
@@ -831,5 +839,3 @@
     </script>
 </body>
 </html>
-
-
